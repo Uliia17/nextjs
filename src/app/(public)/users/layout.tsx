@@ -10,8 +10,7 @@ type Props = {children: React.ReactNode}
 const UsersLayout = ({children}:Props) => {
     return (
         <div>
-            users layout
-            {children}
+             {children}
         </div>
     );
 };

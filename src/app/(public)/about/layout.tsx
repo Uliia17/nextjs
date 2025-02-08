@@ -10,8 +10,7 @@ type Props = {children: React.ReactNode}
 const AboutLayout = ({children}:Props) => {
     return (
         <div>
-            about layout
-            {children}
+              {children}
         </div>
     );
 };

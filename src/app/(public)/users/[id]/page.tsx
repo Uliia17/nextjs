@@ -1,17 +1,19 @@
 import {FC} from "react";
-import {Metadata} from "next";
+import {parseSearchParams, SearchParams} from "@/helpers/helpers";
 
 type Props = {
-    params: {id:string}
-}
+    params: Promise<{ id: string }>;
+    searchParams: Promise<SearchParams>;
+};
 
-const UserPage:FC<Props> = async ({params}) => {
-    console.log(params);
-    const {id} = await params;
+const UserPage: FC<Props> = async ({searchParams}) => {
+    const message = await parseSearchParams(searchParams);
 
     return (
         <div>
-           user page {id}
+            {
+                message && <>user page {message.id} {message.name}</>
+            }
         </div>
     );
 };
